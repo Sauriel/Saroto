@@ -31,7 +31,13 @@
 		</beans:property>
 	</beans:bean>
 	
-	<context:component-scan base-package="de.sauriel.saroto" />
+	<!-- Interceptors -->
+	<mvc:interceptors>
+	    <beans:bean class="de.sauriel.saroto.interceptor.GlobalAttributeHandlerInterceptor" />
+	</mvc:interceptors>
+	
+	<context:component-scan base-package="de.sauriel.saroto.controller" />
+	<context:component-scan base-package="de.sauriel.saroto.service" />
 	
 	
 	
