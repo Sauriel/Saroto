@@ -1,0 +1,30 @@
+body {
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+h1 {
+	font-weight: 700;
+}
+
+#brand-logo>img {
+	margin-top: -10px;
+}
+
+#brand-text {
+	padding-left: 10px;
+	font-size: 28px;
+	color: #fff;
+}
+
+.carousel {
+	background: #333;
+}
+
+/* Bootstrap */
+.navbar {
+	margin-bottom: 0;
+}
+
+.carousel-inner img {
+  margin: auto;
+}

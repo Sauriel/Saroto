@@ -39,6 +39,9 @@
 	<context:component-scan base-package="de.sauriel.saroto.controller" />
 	<context:component-scan base-package="de.sauriel.saroto.service" />
 	
-	
+	<beans:bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<beans:property name="basename" value="classpath:messages"/>
+		<beans:property name="defaultEncoding" value="UTF-8"/>
+	</beans:bean>
 	
 </beans:beans>
