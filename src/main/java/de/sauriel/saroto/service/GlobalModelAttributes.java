@@ -12,19 +12,22 @@ import de.sauriel.saroto.model.RoleplayRulebookModel;
 public class GlobalModelAttributes {
 
 	private HashMap<String, Object> attributes = new HashMap<>();
+	private static final String HOME_URL = "http://localhost:8080/saroto";
 
 	private GlobalModelAttributes() {
 		attributes.put("site", "geek:roleplay");
-		attributes.put("imageFolder", "/resources/images/");
-		attributes.put("jsFolder", "/resources/js/");
-		attributes.put("cssFolder", "/resources/css/");
+		attributes.put("imageFolder", HOME_URL + "/resources/images/");
+		attributes.put("jsFolder", HOME_URL + "/resources/js/");
+		attributes.put("cssFolder", HOME_URL + "/resources/css/");
 		ArrayList<NavbarLinkModel> navbarLinks = new ArrayList<>();
 		navbarLinks.add(NavbarLinkModel.create("geek:home", "http://sauriel.de"));
-		navbarLinks.add(NavbarLinkModel.create("geek:roleplay", "/"));
+		navbarLinks.add(NavbarLinkModel.create("geek:roleplay", HOME_URL));
 		attributes.put("navbarLinks", navbarLinks);
 		ArrayList<RoleplayRulebookModel> rulebooks = new ArrayList<>();
-		rulebooks.add(RoleplayRulebookModel.create("Endland v2", "Version zwei des Endland Regelwerkes.", "endlandv2.png"));
-		rulebooks.add(RoleplayRulebookModel.create("Dungeons & Dragons Next", "Die nächste Version des Dungeons & Dragons Regelwerkes.", "dndnext.png", "DnDNext"));
+		rulebooks.add(
+				RoleplayRulebookModel.create("Endland v2", "Version zwei des Endland Regelwerkes.", "endlandv2.png"));
+		rulebooks.add(RoleplayRulebookModel.create("Dungeons & Dragons Next",
+				"Die nächste Version des Dungeons & Dragons Regelwerkes.", "dndnext.png", "DnDNext"));
 		rulebooks.add(RoleplayRulebookModel.create("Dummy Regelwerk", "Lorem Ipsum set dolor et unam.", "temp.png"));
 		rulebooks.add(RoleplayRulebookModel.create("Dummy Regelwerk", "Lorem Ipsum set dolor et unam.", "temp.png"));
 		rulebooks.add(RoleplayRulebookModel.create("Dummy Regelwerk", "Lorem Ipsum set dolor et unam.", "temp.png"));
