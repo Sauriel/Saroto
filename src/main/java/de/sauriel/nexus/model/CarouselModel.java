@@ -1,4 +1,4 @@
-package de.sauriel.saroto.model;
+package de.sauriel.nexus.model;
 
 public class CarouselModel {
 

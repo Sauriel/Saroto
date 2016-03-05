@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
 	<div class="container-fluid">
 		<!-- Brand and toggle get grouped for better mobile display -->
@@ -22,24 +23,29 @@
 				</c:forEach>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#"><spring:message code="navbar.register"/></a></li>
+				<li><a href="/register/"><spring:message code="navbar.register"/></a></li>
 				<li class="dropdown">
 					<a class="dropdown-toggle" href="#" data-toggle="dropdown"><spring:message code="navbar.login"/> <strong class="caret"></strong></a>
 					<div class="dropdown-menu dropdown-form">
-						<form action="#" method="post" accept-charset="UTF-8">
+						<form:form method="POST" action="/login" accept-charset="UTF-8" modelAttribute="loginModel">
 							<div class="form-group">
-								<input type="email" class="form-control" placeholder="<spring:message code="navbar.login.mail"/>" name="email" required>
+								<spring:message var="mail" code="navbar.login.mail"/>
+								<form:input path="loginName" type="email" cssClass="form-control" placeholder="${mail}" name="email" required="required" />
 							</div>
 							<div class="form-group">
-								<input type="password" class="form-control" placeholder="<spring:message code="navbar.login.password"/>" name="password" required>
+								<spring:message var="password" code="navbar.login.password"/>
+								<form:password path="password" cssClass="form-control" placeholder="${password}" name="password" required="required" />
 							</div>
 							<div class="form-group">
 								<label>
-									<input type="checkbox" name="remember"> <spring:message code="navbar.login.remember"/>
+									<form:checkbox path="rememberMe" name="remember" /> <spring:message code="navbar.login.remember"/>
 								</label>
 							</div>
-							<input class="btn btn-default" type="submit" name="submit" value="<spring:message code="navbar.login.submit"/>" />
-						</form>
+							<form:hidden path="view" value="${pageType}" />
+							<form:button class="btn btn-default" type="submit" name="submit" >
+								<spring:message code="navbar.login.submit"/>
+							</form:button>
+						</form:form>
 					</div>
 				</li>
 			</ul>

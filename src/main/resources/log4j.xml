@@ -11,8 +11,8 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="de.sauriel.saroto">
-		<level value="info" />
+	<logger name="de.sauriel.nexus">
+		<level value="debug" />
 	</logger>
 	
 	<!-- 3rdparty Loggers -->

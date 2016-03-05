@@ -9,8 +9,13 @@
 		<put-attribute name="navbar" value="/WEB-INF/views/templates/default/default-navbar.jsp" />
 		<put-attribute name="header" value="/WEB-INF/views/templates/default/default-header.jsp" />
 		<put-attribute name="menu" value="/WEB-INF/views/templates/default/default-menu.jsp" />
+		<put-attribute name="content" value="/WEB-INF/views/home/home_content.jsp" />
 		<put-attribute name="footer" value="/WEB-INF/views/templates/default/default-footer.jsp" />
 		<put-attribute name="footer-includes" value="/WEB-INF/views/templates/includes/footer-includes.jsp" />
+	</definition>
+	
+	<definition name="register" extends="default-layout">
+		<put-attribute name="content" value="/WEB-INF/views/usermanagement/register.jsp" />
 	</definition>
 
 </tiles-definitions>

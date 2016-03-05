@@ -1,11 +1,11 @@
-package de.sauriel.saroto.controller;
+package de.sauriel.nexus.controller;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import de.sauriel.saroto.config.variables.RequestViewMapping;
+import de.sauriel.nexus.config.variables.RequestViewMapping;
 
-@Controller
+//TODO: Mit neumen ViewMapping zum laufen bringen
+//@Controller
 public class FaviconController {
 
 	private final String FAVICON_FOLDER = "resources/images/favicon/";

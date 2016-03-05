@@ -1,20 +1,23 @@
-package de.sauriel.saroto.service;
+package de.sauriel.nexus.service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.springframework.stereotype.Service;
 
-import de.sauriel.saroto.model.NavbarLinkModel;
-import de.sauriel.saroto.model.RoleplayRulebookModel;
+import de.sauriel.nexus.controller.usermanagement.LoginController;
+import de.sauriel.nexus.model.NavbarLinkModel;
+import de.sauriel.nexus.model.RoleplayRulebookModel;
+import de.sauriel.nexus.model.usermanagement.LoginModel;
 
 @Service
 public class GlobalModelAttributes {
 
 	private HashMap<String, Object> attributes = new HashMap<>();
-	private static final String HOME_URL = "http://localhost:8080/saroto";
+	private static final String HOME_URL = "http://localhost:8080/";
 
 	private GlobalModelAttributes() {
+		attributes.put(LoginController.LOGIN_MODEL_NAME, new LoginModel());
 		attributes.put("site", "geek:roleplay");
 		attributes.put("imageFolder", HOME_URL + "/resources/images/");
 		attributes.put("jsFolder", HOME_URL + "/resources/js/");

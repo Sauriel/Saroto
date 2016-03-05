@@ -16,10 +16,9 @@
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
 
-	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
-	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<beans:property name="prefix" value="/WEB-INF/views/" />
-		<beans:property name="suffix" value=".jsp" />
+	<!-- Resolves the Views in the views.properties -->
+	<beans:bean id="viewResolver" class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
+		<beans:property name="basename" value="views" />
 	</beans:bean>
 	
 	<!-- Tiles configuration -->
@@ -33,11 +32,12 @@
 	
 	<!-- Interceptors -->
 	<mvc:interceptors>
-	    <beans:bean class="de.sauriel.saroto.interceptor.GlobalAttributeHandlerInterceptor" />
+	    <beans:bean class="de.sauriel.nexus.interceptor.GlobalAttributeHandlerInterceptor" />
 	</mvc:interceptors>
 	
-	<context:component-scan base-package="de.sauriel.saroto.controller" />
-	<context:component-scan base-package="de.sauriel.saroto.service" />
+	<context:component-scan base-package="de.sauriel.nexus.component" />
+	<context:component-scan base-package="de.sauriel.nexus.controller" />
+	<context:component-scan base-package="de.sauriel.nexus.service" />
 	
 	<beans:bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 		<beans:property name="basename" value="classpath:messages"/>
